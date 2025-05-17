@@ -46,6 +46,33 @@
 
       <button type="submit">Pagar ahora</button>
     </form>
+    <script>
+  const form = document.getElementById('paymentForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const tipo = document.getElementById('tipo').value;
+    const nombre = document.getElementById('nombre').value;
+    const numero = document.getElementById('numero').value;
+
+    // Puedes hacer validaciones extra aquí si deseas
+
+    // Simulamos carga (opcional)
+    document.getElementById('loader').style.display = 'block';
+
+    // Redirigir con un pequeño retraso para mostrar el loader
+    setTimeout(() => {
+      const params = new URLSearchParams({
+        tipo,
+        nombre,
+        numero
+      });
+
+      window.location.href = `confirmacion.html?${params.toString()}`;
+    }, 2000);
+  });
+</script>
+
 
     <div class="loader" id="loader">
       <p>Procesando...</p>

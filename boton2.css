@@ -1,0 +1,227 @@
+body{
+  background-color:white;
+  }
+
+
+  body{
+    font-family:24;
+  }
+
+  button{
+  font-size:1.0em;
+  font-weight: bold;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border:1px;
+  color: BLACK;
+  background-color:tan;
+  align-items: center;
+  justify-content: center;
+  }
+  .btn-1 button:hover {
+background-color:peru;
+}
+  h2{font-size: 2.5em;}
+  h2{float:center;}
+  h3{float: right;}
+
+
+.conteiner{
+  max-width: 1300px;
+  margin:auto;
+
+}
+  header{
+    background-color:tan;
+    font-size: 1.4em;
+    justify-contender:center;
+    display:grid;
+    gap:25px;
+    padding:20px;
+}
+
+header .logo{
+  margin: 0;
+  padding: 25px 35px;
+  color: steelblue;
+  font-size: 3.20em;
+  align-items:right;
+  font-family:cursive;
+}
+header .conteiner{
+  display: flex;
+  flex-direction: column; 
+  align-items:rigt;
+}
+header a {
+  padding:5px 12px;
+  text-decoration:none;
+  color:black ;
+}
+.container{
+max-width: 2000px;
+margin: 0;
+}
+.productos {
+padding: 0 0 80px 0;
+text-align: center;
+}
+
+.productos-content  {
+margin-top: 30px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+column-gap: 10px
+}
+
+.productos-1 {
+background color:#5F9F9F;
+padding: 20px;
+}
+
+.productos-1 h4{
+color: #A8A8A8;
+font-size: 30px;
+margin-bottom: 5px;
+}
+.procuctos-1 p {
+   color: blue;
+   margin-bottom: 10px;
+}
+ .navbar ul {
+display: flex;
+}
+  .navbar ul li a {
+font-size: 20px;
+padding: 0 20px;
+color: #1B1B1D;
+display: grid;
+font-weight: 600;
+}
+ .navber ul li a:hover{
+color: #FF8400;
+}
+
+  }
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* CENTRAR los enlaces de navegación */
+.navbar {
+   
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 30px; /* Espacio entre los enlaces */
+    font-family: initial;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color:saddlebrown;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+}
+.contenedor {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding:150px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* Imagen */
+.imagen img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+/* Texto */
+.texto {
+    max-width: 500px;
+}
+
+.texto h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.texto p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.btn-1 button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      background-color:burlywood;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-1 button:hover {
+      background-color: #45a049;
+    }
+
+    #btn-comprar {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #btn-comprar:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    #total {
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }

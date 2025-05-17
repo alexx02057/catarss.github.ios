@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="cuestion.css" />
   <title>Perfumería - Registro</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
   <main>
     <section class="form-register">
       <h4>Formulario de Registro</h4>
-      <form action="#" method="post">
+      <form id="registroForm">
         <label for="nombres">Nombre</label>
         <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingresa tu nombre" required>
 
@@ -45,9 +46,66 @@
       </form>
     </section>
   </main>
+
   <footer>
-        <p>&copy; 2025 PERFUMERIA CATARSIS | TODOS LOS DERECHOS RESERVADOS</p>
-    </footer>
+    <p>&copy; 2025 PERFUMERIA CATARSIS | TODOS LOS DERECHOS RESERVADOS</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("registroForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Evita el envío normal
+
+      const nombre = document.getElementById("nombres").value;
+      const apellido = document.getElementById("apellidos").value;
+      const correo = document.getElementById("correo").value;
+      const password = document.getElementById("password").value;
+      const terminos = document.getElementById("terminos").checked;
+
+      // Obtener usuarios registrados o crear arreglo vacío
+      let usuarios = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
+
+      // Validar si el correo ya existe
+      const yaExiste = usuarios.some(usuario => usuario.correo === correo);
+
+      if (yaExiste) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Correo ya registrado',
+          text: 'Intenta con otro correo o inicia sesión.'
+        });
+        return;
+      }
+
+      // Guardar nuevo usuario
+      const nuevoUsuario = { nombre, apellido, correo, password };
+      usuarios.push(nuevoUsuario);
+      localStorage.setItem("usuariosRegistrados", JSON.stringify(usuarios));
+
+      Swal.fire({
+        icon: 'success',
+        title: '¡Registro exitoso!',
+        text: 'Tu cuenta ha sido registrada correctamente.',
+        confirmButtonText: 'Continuar'
+      }).then(() => {
+        window.location.href = "index.html";
+      });
+    });
+  </script>
+<!-- En registro.html -->
+<script>
+    function registrarUsuario() {
+        // Aquí iría tu lógica de validación y registro
+        localStorage.setItem("isRegistered", "true");
+
+        // Redirige al inicio
+        window.location.href = "index.html";
+    }
+</script>
+
+<!-- Y un botón que llama esa función -->
+<button onclick="registrarUsuario()">Registrarse</button>
 
 </body>
 </html>

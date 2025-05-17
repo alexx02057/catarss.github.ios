@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="boton1.css">
     <title>Perfumería</title>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -42,14 +43,28 @@
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
       carrito.push({ nombre, precio });
       localStorage.setItem('carrito', JSON.stringify(carrito));
+                            // Mensaje bonito con SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: '¡Añadido al carrito!',
+        text: `"${nombre}" ha sido agregado correctamente.`,
+        showConfirmButton: false,
+        timer: 1800
+      });
+    }
+
+    function comprarAhora(nombre) {
+      Swal.fire({
+        icon: 'info',
+        title: 'Redirigiendo...',
+        text: `Gracias por comprar "${nombre}"`,
+        showConfirmButton: false,
+        timer: 2000
+      }).then(() => {
+        window.location.href = "envio.html";
+      });
     }
   </script>
-
-  <script>
-  function comprarAhora(nombre) { // 
-    window.location.href = "metodo2.html";
-  }
-</script>
 <footer>
         <p>&copy; 2025 PERFUMERIA CATARSIS | TODOS LOS DERECHOS RESERVADOS</p>
     </footer>

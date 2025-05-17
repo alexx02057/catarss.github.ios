@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfumería</title>
+  <link rel="stylesheet" href="metod.css">
+  <style>
+    body 
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="INICIO.HTML">INICIO</a></li>
+        <li><a href="productos.HTML">PRODUCTOS</a></li>
+        <li><a href="carrito.html">CARRITO</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+
+  <h1>METODO DE PAGO</h1>
+
+  <form onsubmit="return confirmarCompra()">
+    <div class="metodos">
+      <label><input type="radio" name="metodo" value="Tarjeta" required> Tarjeta de crédito / débito</label>
+      <label><input type="radio" name="metodo" value="PayPal"> PayPal</label>
+      <label><input type="radio" name="metodo" value="Transferencia"> Transferencia bancaria</label>
+    </div>
+
+   <center><button type="submit">Confirmar compra</button></center>
+  </form>
+
+  <script>
+    function confirmarCompra() {
+      const metodoSeleccionado = document.querySelector('input[name="metodo"]:checked');
+      if (metodoSeleccionado) {
+        alert("Compra confirmada con el método: " + metodoSeleccionado.value);
+      } else {
+        alert("Por favor selecciona un método de pago.");
+        return false;
+      }
+    }
+  </script>
+
+</body>
+</html>
